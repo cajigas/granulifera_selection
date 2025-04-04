@@ -1,5 +1,0 @@
-2- Generation of genome index
-
-STAR --runThreadN 32 \
---runMode genomeGenerate --genomeDir \
---genomeFastaFiles GCA_033576555.1_ASM3357655v1_genomic.fa
