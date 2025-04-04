@@ -1,4 +1,8 @@
-10- VCF postprocessing with vcftools and PLINK
+### VCF postprocessing with vcftools and PLINK ###
+# The code is identical for both references, just file names change
+
+help> https://www.cog-genomics.org/plink/2.0/data#make_pgen
+help> https://github.com/vcftools/vcftools 
 
 # Filter in vcftools
 vcftools --vcf granulifera_GATK_variants.filtered.SNPS.biallelic.vcf --minDP 3 --maf 0.05 --max-missing 0.75 \
