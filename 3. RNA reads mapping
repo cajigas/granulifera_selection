@@ -1,0 +1,25 @@
+3- Mapping reads against reference genome using STAR
+
+#!/bin/bash
+module load gcc/9.3.0
+module load openmpi/gcc.9/3.1.5
+
+samplesheet="granulifera_samples_trimmed.txt"
+samplename=`sed -n "$SLURM_ARRAY_TASK_ID"p $samplesheet | awk '{print $1}'`
+r1=`sed -n "$SLURM_ARRAY_TASK_ID"p $samplesheet | awk '{print $2}'`
+r2=`sed -n "$SLURM_ARRAY_TASK_ID"p $samplesheet | awk '{print $3}'`
+
+genomeDir="the directory where the genome is"
+workDir= "my directory"
+mkdir $workDir
+cd $workDir
+# STAR array
+STAR --readFilesCommand zcat --outFileNamePrefix $samplename \
+	--outSAMtype BAM Unsorted --outSAMmapqUnique 60 \
+	--outSAMattrRGline ID:$samplename CN:ZoolInst_TiHo \
+	LB:PairedEnd PL:Illumina PU:Unknown SM:$samplename \
+	--genomeDir $genomeDir --runThreadN $SLURM_NTASKS --readFilesIn $r1 $r2 --twopassMode Basic 
+	
+samtools sort -@ 2 -o $samplename"_sorted.bam" $samplename"Aligned.out.bam"
+samtools index -c -@ 2 $samplename"_sorted.bam"
+rm $workDir/$samplename"Aligned.out.bam"
