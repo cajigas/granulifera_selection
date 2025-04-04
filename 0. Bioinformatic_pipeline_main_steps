@@ -2,7 +2,7 @@ Bioinformatic pipeline followed to do haplotype calling of Oophaga granulifera R
 
 Main steps included:
 1- RNA reads quality trimming
-2- Generation of genome index
+2- Generation of genome or SuperTranscriptome index
 3- Mapping reads against reference using STAR
 4- Mark duplicates
 5- Merge tissues per individuals
