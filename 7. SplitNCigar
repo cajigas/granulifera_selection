@@ -1,5 +1,7 @@
-7- SplitNCigar 
+### SplitNCigar ###
+# The code for both references is the same, just modules change
 
+# for the genome
 #!/bin/bash
 
 module load anaconda3/2019.03
@@ -19,7 +21,7 @@ CIGAR=$OUTDIR/"${name}"_merged.sorted.deduped.ok.cigar.bam
 
 # Create sequence dictionary
 samtools faidx -c $reference 
-java -jar  picard.jar CreateSequenceDictionary R=GCA_033576555.1_ASM3357655v1_genomic.fa 
+java -jar  picard.jar CreateSequenceDictionary R=GCA_033576555.1_ASM3357655v1_genomic.fa \
 O= GCA_033576555.1_ASM3357655v1_genomic.dict
 
 mkdir temp
@@ -30,3 +32,22 @@ gatk SplitNCigarReads --java-options '-Xmx20G -XX:+UseParallelGC -XX:ParallelGCT
 
 # Create csi index
 samtools index -c -@ 4 $CIGAR
+
+# for the SuperTranscriptome
+
+module load miniconda3/22.11.1
+module load gcc/13.2.0
+module load openmpi/4.1.6
+module load openjdk/17.0.8.1_1
+module load curl/8.4.0-aixpq3w
+module load samtools/1.17
+module load gatk/4.4.0.0
+
+# Create sequence dictionary
+samtools faidx -c SuperDuper.sorted.fasta
+java -jar picard.jar CreateSequenceDictionary R= SuperDuper.sorted.fasta \
+O= SuperDuper.sorted.dict
+
+
+
+
