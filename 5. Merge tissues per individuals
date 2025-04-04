@@ -1,4 +1,4 @@
-5- Merge tissues per individuals
+### Merge tissues per individuals ###
 # The code for both references is identical, just the modules change
 
 #!/bin/bash
