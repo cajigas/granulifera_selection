@@ -1,0 +1,20 @@
+6- Fix groups ID
+
+#!/bin/bash
+
+# module load
+module load anaconda3/2019.03
+module load java/16
+conda init bash
+
+cd $workDir
+for bamfile in workdir/*_merged.sorted.deduped.bam ; do
+    sample_name=$(basename -s _merged.sorted.deduped.bam $bamfile)
+    echo -e "["$(date)"]\tRenaming.." $bamfile
+gatk AddOrReplaceReadGroups -I $bamfile -O ${bamfile%%.bam}".ok.bam" \
+       --RGID $sample_name \
+       --RGLB PairedEnd \
+       --RGPL Illumina \
+       --RGPU merged \
+       --RGSM $sample_name
+done
