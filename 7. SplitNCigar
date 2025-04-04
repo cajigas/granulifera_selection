@@ -1,0 +1,32 @@
+7- SplitNCigar 
+
+#!/bin/bash
+
+module load anaconda3/2019.03
+module load java/8
+module load gatk
+conda init bash
+
+samplesheet="granulifera_samples_merged_sorted_deduped.ok.bam.txt"
+threads=$SLURM_JOB_CPUS_PER_NODE
+name=`sed -n "$SLURM_ARRAY_TASK_ID"p $samplesheet | awk '{print $1}'`
+BAM=`sed -n "$SLURM_ARRAY_TASK_ID"p $samplesheet | awk '{print $2}'`
+reference="GCA_033576555.1_ASM3357655v1_genomic.fa"
+INDIR="my directory"
+OUTDIR="my directory"
+DEDUPED=$OUTDIR/"${name}"_merged.sorted.deduped.ok.bam
+CIGAR=$OUTDIR/"${name}"_merged.sorted.deduped.ok.cigar.bam
+
+# Create sequence dictionary
+samtools faidx -c $reference 
+java -jar  picard.jar CreateSequenceDictionary R=GCA_033576555.1_ASM3357655v1_genomic.fa 
+O= GCA_033576555.1_ASM3357655v1_genomic.dict
+
+mkdir temp
+cd $OUTDIR
+gatk SplitNCigarReads --java-options '-Xmx20G -XX:+UseParallelGC -XX:ParallelGCThreads=4' \
+--input $DEDUPED --output $CIGAR --reference $reference --skip-mapping-quality-transform \
+--tmp-dir temp --create-output-bam-index false
+
+# Create csi index
+samtools index -c -@ 4 $CIGAR
