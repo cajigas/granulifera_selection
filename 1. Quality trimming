@@ -1,6 +1,5 @@
-### Reference O. sylvatica genome ###
+### RNA reads quality trimming ###
 
-1- RNA reads quality trimming
 #!/bin/bash
 
 module load openmpi/gcc.9/3.1.5
@@ -22,7 +21,3 @@ fastp --thread $SLURM_NTASKS --detect_adapter_for_pe \
 --html ${samplename}".fastp.html" \
 --json ${samplename}".fastp.json" 
 
-### Reference O. granulifera SuperTranscriptome ###
-
-1- RNA reads quality trimming
-#!/bin/bash
