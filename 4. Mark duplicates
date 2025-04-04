@@ -1,4 +1,4 @@
-4- Mark duplicates
+### Mark duplicates ###
 # This step was identical for both references, only the modules differ due to remote server software updates
 
 #!/bin/bash
