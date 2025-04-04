@@ -1,11 +1,20 @@
-6- Fix groups ID
+### Fix groups ID ###
+# The code for both references is identical, just modules change
 
 #!/bin/bash
 
-# module load
+# for the genome
 module load anaconda3/2019.03
 module load java/16
 conda init bash
+
+# for the SuperTranscriptome
+module load miniconda3/22.11.1
+module load gcc/13.2.0
+module load openmpi/4.1.6
+module load openjdk/17.0.8.1_1
+module load gatk/4.4.0.0
+
 
 cd $workDir
 for bamfile in workdir/*_merged.sorted.deduped.bam ; do
