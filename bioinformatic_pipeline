@@ -1,14 +1,19 @@
-Bioinformatic pipeline followed to do haplotype calling.
+Bioinformatic pipeline followed to do haplotype calling of Oophaga granulifera RNA reads when using the reference genome of Oophaga sylvatica
+
 Main steps included:
-1- 
-2-
-3-
-4-
-5-
-6-
-7-
-8-
-9-
-10-
+1- RNA reads quality trimming
+2- Generation of genome index
+3- Mapping reads against reference using STAR
+4- Mark duplicates
+5- Merge tissues per individuals
+6- Fix groups ID
+7- SplitNCigar 
+8- GATK Haplotype Calling
+9- GATK Merge individuals
+10- VCF postprocessing
+
+
+For each step I provide the used script. Note that all bioinformatic analyses were conducted in a remote server of HPC from the Emmy/Grete at NHR–Nord@Göttingen.
+Accounts, and resource allocation to different nodes and partitions might vary.
 
 
