@@ -1,6 +1,10 @@
 ### Merge tissues per individuals ###
 # The code for both references is identical, just the modules change
 
+Author: Anaisa Cajigas Gandia
+License: MIT
+Last updated: 8.4.2025
+
 #!/bin/bash
 
 # for the genome
