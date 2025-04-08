@@ -1,6 +1,10 @@
 ### GATK Merge individuals ###
 # The code is the same for both references, just modules, reference and file name change accordingly
 
+Author: Anaisa Cajigas Gandia
+License: MIT
+Last updated: 8.4.2025
+
 # for the genome
 gatk CombineGVCFs --java-options '-Xmx100G -XX:+UseParallelGC -XX:ParallelGCThreads=28' \
 -R GCA_033576555.1_ASM3357655v1_genomic.fa \
