@@ -1,0 +1,13 @@
+Identifying signatures of selection in aposematic and cryptic populations of O. granulifera
+Used three different selection scans: BayeScan, Ohana, PCAdapt
+
+Scripts for selection scans are provided separedly, as they were performed in different software
+and using either R, HPC servers or a combination of both.
+
+Author: Anaisa Cajigas Gandia
+License: GNU
+Last updated: 8.4.2025
+
+For details on the used selection scan please check their respective publications, cited in the
+companion article of this data.
+
