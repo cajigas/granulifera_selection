@@ -1,6 +1,10 @@
 ### VCF postprocessing with vcftools and PLINK ###
 # The code is identical for both references, just file names change
 
+Author: Anaisa Cajigas Gandia
+License: MIT
+Last updated: 8.4.2025
+
 help> https://www.cog-genomics.org/plink/2.0/data#make_pgen
 help> https://github.com/vcftools/vcftools 
 
