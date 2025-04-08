@@ -19,8 +19,10 @@ module load openmpi/4.1.6
 module load openjdk/17.0.8.1_1
 module load gatk/4.4.0.0
 
-
+workDir= "path/to/working_directory"
+mkdir $workDir
 cd $workDir
+
 for bamfile in workdir/*_merged.sorted.deduped.bam ; do
     sample_name=$(basename -s _merged.sorted.deduped.bam $bamfile)
     echo -e "["$(date)"]\tRenaming.." $bamfile
