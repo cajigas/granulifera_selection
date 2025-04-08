@@ -4,11 +4,9 @@ Author: Anaisa Cajigas Gandia
 License: GNU
 Last updated: 8.4.2025
 
-# Change to the directory where STAR is
 STAR --runThreadN 32 \
 --runMode genomeGenerate --genomeDir \
 --genomeFastaFiles path/to/reference_genome/GCA_033576555.1_ASM3357655v1_genomic.fa
-
 
 ### Generation of SuperTranscriptome index ###
 
