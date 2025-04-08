@@ -1,6 +1,10 @@
 ### Mark duplicates ###
 # This step was identical for both references, only the modules differ due to remote server software updates
 
+Author: Anaisa Cajigas Gandia
+License: MIT
+Last updated: 8.4.2025
+
 #!/bin/bash
 # for genome
 module load anaconda3/2019.03
