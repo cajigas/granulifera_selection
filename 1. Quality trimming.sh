@@ -1,5 +1,9 @@
 ### RNA reads quality trimming ###
 
+Author: Anaisa Cajigas Gandia
+License: MIT
+Last updated: 8.4.2025
+
 #!/bin/bash
 
 module load openmpi/gcc.9/3.1.5
