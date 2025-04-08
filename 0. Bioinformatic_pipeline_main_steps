@@ -1,4 +1,4 @@
-Bioinformatic pipeline followed to do haplotype calling of Oophaga granulifera RNA reads when using the reference genome of Oophaga sylvatica
+Bioinformatic pipeline followed to do haplotype calling of *Oophaga granulifera* RNA reads when using the reference genome of Oophaga sylvatica
 
 Main steps included:
 1- RNA reads quality trimming
