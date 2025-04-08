@@ -1,7 +1,7 @@
 ### RNA reads quality trimming ###
 
 Author: Anaisa Cajigas Gandia
-License: MIT
+License: GNU
 Last updated: 8.4.2025
 
 #!/bin/bash
