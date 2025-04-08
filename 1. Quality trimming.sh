@@ -10,8 +10,8 @@ module load openmpi/gcc.9/3.1.5
 
 # provide the directory with the reads and 
 # a tab separated table of PE reads samples in three columns (id mate-1 mate-2)
-READS_DIR= "my directory"
-samplesheet="granulifera_samples_raw.txt"
+READS_DIR= "path/to/directory"
+samplesheet="path/to/file/granulifera_samples_raw.txt"
 threads=$SLURM_NTASKS
 samplename=`sed -n "$SLURM_ARRAY_TASK_ID"p $samplesheet | awk '{print $1}'`
 r1=`sed -n "$SLURM_ARRAY_TASK_ID"p $samplesheet | awk '{print $2}'`
