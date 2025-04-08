@@ -2,27 +2,26 @@
 # This step was identical for both references, only the modules differ due to remote server software updates
 
 Author: Anaisa Cajigas Gandia
-License: MIT
+License: GNU
 Last updated: 8.4.2025
 
-#!/bin/bash
 # for genome
+#!/bin/bash
 module load anaconda3/2019.03
 module load java/16
 conda init bash
 
-samplesheet="granulifera_samples_sorted.bam.txt"
+samplesheet="path/to/file/granulifera_samples_sorted.bam.txt"
 threads=$SLURM_JOB_CPUS_PER_NODE
 sample=`sed -n "$SLURM_ARRAY_TASK_ID"p $samplesheet | awk '{print $1}'`
 BAM=`sed -n "$SLURM_ARRAY_TASK_ID"p $samplesheet | awk '{print $2}'`
-INDIR="my directory"
-OUTDIR="my directory"
+INDIR="path/to/input_directory"
+OUTDIR="path/to/output_directory"
 DEDUPED=$OUTDIR/"${sample}".sorted.deduped.bam
 METRICS=$OUTDIR/"${sample}".picard-output.metrics
 
 cd $OUTDIR
 gatk MarkDuplicates -I $BAM -O $DEDUPED -VALIDATION_STRINGENCY SILENT -M $METRICS 
-
 
 # for SuperTranscriptome
 module load miniconda3/22.11.1
