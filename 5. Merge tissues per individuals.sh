@@ -2,22 +2,22 @@
 # The code for both references is identical, just the modules change
 
 Author: Anaisa Cajigas Gandia
-License: MIT
+License: GNU
 Last updated: 8.4.2025
 
-#!/bin/bash
-
 # for the genome
+#!/bin/bash
 module load samtools
 
 # for the SuperTranscriptome
+#!/bin/bash
 module load miniconda3/22.11.1  
 module load gcc/13.2.0 
 module load openmpi/4.1.6
 module load curl/8.4.0-aixpq3w
 module load samtools/1.17
 
-cd my directory
+cd path/to/input_directory
 samtools merge --threads 8 DAM1_merged.sorted.deduped.bam DAM1*.sorted.deduped.bam
 samtools merge --threads 8 DAM2_merged.sorted.deduped.bam DAM2*.sorted.deduped.bam
 samtools merge --threads 8 DAM3_merged.sorted.deduped.bam DAM3*.sorted.deduped.bam
