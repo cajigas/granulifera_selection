@@ -2,17 +2,17 @@
 # The code for both references is identical, just modules change
 
 Author: Anaisa Cajigas Gandia
-License: MIT
+License: GNU
 Last updated: 8.4.2025
 
-#!/bin/bash
-
 # for the genome
+#!/bin/bash
 module load anaconda3/2019.03
 module load java/16
 conda init bash
 
 # for the SuperTranscriptome
+#!/bin/bash
 module load miniconda3/22.11.1
 module load gcc/13.2.0
 module load openmpi/4.1.6
