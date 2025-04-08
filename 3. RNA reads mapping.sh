@@ -1,23 +1,25 @@
 ### Mapping reads against reference genome using STAR ###
 
 Author: Anaisa Cajigas Gandia
-License: MIT
+License: GNU
 Last updated: 8.4.2025
 
 #!/bin/bash
 module load gcc/9.3.0
 module load openmpi/gcc.9/3.1.5
 
-samplesheet="granulifera_samples_trimmed.txt"
+threads=$SLURM_NTASKS
+export OMP_NUM_THREADS=$SLURM_NTASKS
+
+samplesheet="path/to/file/granulifera_samples_trimmed.txt"
 samplename=`sed -n "$SLURM_ARRAY_TASK_ID"p $samplesheet | awk '{print $1}'`
 r1=`sed -n "$SLURM_ARRAY_TASK_ID"p $samplesheet | awk '{print $2}'`
 r2=`sed -n "$SLURM_ARRAY_TASK_ID"p $samplesheet | awk '{print $3}'`
-
-genomeDir="the directory where the genome is"
-workDir= "my directory"
+genomeDir="path/to/reference_genome"
+workDir= "path/to/working_directory"
 mkdir $workDir
 cd $workDir
-# STAR array
+
 STAR --readFilesCommand zcat --outFileNamePrefix $samplename \
 	--outSAMtype BAM Unsorted --outSAMmapqUnique 60 \
 	--outSAMattrRGline ID:$samplename CN:ZoolInst_TiHo \
@@ -30,10 +32,10 @@ rm $workDir/$samplename"Aligned.out.bam"
 
 ### Mapping reads against reference SuperTranscriptome using STAR ###
 
-#!/bin/bash
-
 # Note that by the time when the analysis with the SuperTranscriptome was done, there were software updates in the supercomputer remote server
 # and therefore, new modules and module versions had to be used
+
+#!/bin/bash
 module load miniconda3/22.11.1
 module load openjdk/17.0.8.1_1
 module load openmpi/4.1.6
@@ -44,12 +46,12 @@ module load samtools/1.17
 threads=$SLURM_CPUS_PER_TASK
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
-samplesheet="granulifera_samples_trimmed.txt"
+samplesheet="path/to/file/granulifera_samples_trimmed.txt"
 samplename=`sed -n "$SLURM_ARRAY_TASK_ID"p $samplesheet | awk '{print $1}'`
 r1=`sed -n "$SLURM_ARRAY_TASK_ID"p $samplesheet | awk '{print $2}'`
 r2=`sed -n "$SLURM_ARRAY_TASK_ID"p $samplesheet | awk '{print $3}'`
-supertranscriptDir="my directory"
-workDir= "my directory"
+supertranscriptDir="path/to/reference_supertranscriptome"
+workDir= "path/to/working_directory"
 cd $workDir
 
 STAR --readFilesCommand zcat --outFileNamePrefix $samplename \
