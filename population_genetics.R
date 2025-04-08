@@ -4,10 +4,8 @@ Population genetics analyses were performed using the R package sambar and inclu
 3- Population genetic differentiation
 
 Author: Anaisa Cajigas Gandia
-License: MIT
+License: GNU
 Last updated: 8.4.2025
-
-# R script
 
 source("https://github.com/mennodejong1986/SambaR/raw/master/SAMBAR_v1.10.txt")
 getpackages() ## this is to get all required packages and dependencies sambaR need, and load them
