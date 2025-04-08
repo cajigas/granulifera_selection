@@ -1,5 +1,9 @@
 ### Mapping reads against reference genome using STAR ###
 
+Author: Anaisa Cajigas Gandia
+License: MIT
+Last updated: 8.4.2025
+
 #!/bin/bash
 module load gcc/9.3.0
 module load openmpi/gcc.9/3.1.5
