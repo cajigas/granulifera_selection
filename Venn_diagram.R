@@ -2,7 +2,9 @@
 This script shows how the Venn diagrams to represent common SNPs across the three selection scans for the genome and the superTranscriptome.
 The script for both references is identical, just the input file changes.
 
-
+Author: Anaisa Cajigas Gandia
+License: GNU
+Last updated: 16.4.2025
 
 setwd("path/to /directory")
 library(qqplot)
