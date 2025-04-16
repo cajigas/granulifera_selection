@@ -2,6 +2,10 @@
 This script shows how Manhattan plots to represent the SNPs under positive selection
 identified by BayeScan, Ohana and PCAdapt were done.
 
+Author: Anaisa Cajigas Gandia
+License: GNU
+Last updated: 16.4.2025
+
 # BayeScan #
 
 setwd("path/to/directory")
