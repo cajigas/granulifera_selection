@@ -1,10 +1,17 @@
 ### Fix reads ID ###
-The script for both refrences is identical, only the input file changes.
+The script for both refrences is identical, only the input file and loaded modules change.
 
-
+Author: Anaisa Cajigas Gandia
+License: GNU
+Last updated: 17.4.2025
 
 #!/bin/bash
-# module load
+# Modules used for the genome
+module load anaconda3/2019.03
+module load java/16
+conda init bash
+
+# Modules used for the supertranscriptome
 module load miniconda3/22.11.1
 module load gcc/13.2.0
 module load openmpi/4.1.6
