@@ -86,4 +86,4 @@ print(combined_genome)
 ggsave("combined_genome_plot.pdf", combined_genome, width = 10, height = 18) 
 
 # Same steps were followed to conduct ORA analysis using the dataset obtained when
-mapping against the supertranscriptome 
+# mapping against the supertranscriptome 
