@@ -1,6 +1,8 @@
 ### Over Representation Analysis ###
 
-
+Author: Anaisa Cajigas Gandia
+License: GNU
+Last updated: 5.11.2025
 
 # Install and load required packages
 if (!requireNamespace("BiocManager", quietly = TRUE))
