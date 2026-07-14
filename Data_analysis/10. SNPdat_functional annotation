@@ -1,5 +1,7 @@
-### SNPdat was used to make the functional annotation of selected SNPs ###
+### SNPdat was used to make the functional annotation of SNPs under positive selection ###
 
-Author:
+Author: Anaisa Cajigas Gandia
+License: GNU
+Last updated: 14.7.2026
 
 ## Scripts for this analysis are available in this directory: https://github.com/cajigas/granulifera_SNPs/SNP_effect_prediction ###
