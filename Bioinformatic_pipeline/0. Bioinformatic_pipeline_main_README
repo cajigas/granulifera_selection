@@ -1,4 +1,5 @@
-Bioinformatic pipeline followed to do haplotype calling of Oophaga granulifera RNA reads when using the reference genome of Oophaga sylvatica
+### Bioinformatic pipeline followed to do haplotype calling of Oophaga granulifera RNA reads using
+the genome of Oophaga sylvatica and a species-specific superTranscriptome as references ###
 
 Main steps included:
 1- RNA reads quality trimming
@@ -17,4 +18,5 @@ Main steps included:
 For each step I provide the used script. Note that all bioinformatic analyses were conducted in a remote server of HPC from the Emmy/Grete at NHR–Nord@Göttingen.
 Accounts, and resource allocation to different nodes and partitions might vary, and are not provided here
 
-
+The files used for each analysis are available either in this github directory or in Zenodo: https://doi.org/10.5281/zenodo.17805830
+See related publication for more details on data availability
