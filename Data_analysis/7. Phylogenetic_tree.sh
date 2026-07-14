@@ -1,9 +1,12 @@
 ### TREEMIX analysis ###
-Script by Ariel Rodríguez
 
+Author: Script by Ariel Rodríguez
+License: GNU
+Last updated: 14.7.2026
 
 
 # Merge VCF files of the three species: Oophaga granulifera and two outgroups (Oophaga sylvatica and Dendrobates tinctorius)
+# Same procedure as in step 9 in the Bioinformatic pipeline directory
 
 # This section will extract unlinked SNPs
 plink2 --vcf granulifera_tintorius_jointCalling_filteredSNPs_OK.vcf --allow-extra-chr --set-all-var-ids @:#\$r,\$a --remove outgroup_samples.txt --indep-pairwise 50 1 0.7 --bad-ld 
